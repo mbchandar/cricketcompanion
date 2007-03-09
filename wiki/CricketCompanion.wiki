@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Firefox plugins for cricket fans covering world cup 2007
 #labels Featured
 
 = Introduction =
@@ -11,5 +11,4 @@ Cricket Companion is a firefox plugin for cricket fans. It was developed based o
 Features
   * Give details about world cup cricket 2007
   * Foto Galleries, Schedules, Teams information etc
-
 
