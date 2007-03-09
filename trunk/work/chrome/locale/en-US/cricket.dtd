@@ -1,0 +1,64 @@
+<!-- toolbar button -->
+<!ENTITY cricket.tbbutton.label				"Cricket Companion">
+<!ENTITY cricket.tbbutton.tooltip			"Cricket Companion by Balachandar M">
+
+<!ENTITY cricket.main.menu.label			"cricket.balachandar.net">
+<!ENTITY cricket.main.menu.accesskey			"C">
+
+<!-- inside the cricket menu or button -->
+<!ENTITY cricket.menu.sidebar.label			"Sidebar">
+<!ENTITY cricket.menu.sidebar.tooltip			"Sidebar">
+<!ENTITY cricket.menu.sidebar.accesskey			"B">
+
+
+<!ENTITY cricket.menuitem.sidebar.cricket.label		"cricket.balachandar.net">
+<!ENTITY cricket.menuitem.sidebar.cricket.tooltip	"cricket.balachandar.net">
+<!ENTITY cricket.menuitem.sidebar.cricket.accesskey	"C">
+
+<!ENTITY cricket.menuitem.login.label			"Login">
+<!ENTITY cricket.menuitem.login.tooltip			"Login">
+<!ENTITY cricket.menuitem.login.accesskey		"L">
+<!ENTITY cricket.menuitem.cricket.label			"cricket.balachandar.net">
+<!ENTITY cricket.menuitem.cricket.tooltip		"cricket.balachandar.net">
+<!ENTITY cricket.menuitem.cricket.accesskey		"C">
+<!ENTITY cricket.menuitem.friends.label			"Friends">
+<!ENTITY cricket.menuitem.friends.tooltip		"Friends">
+<!ENTITY cricket.menuitem.friends.accesskey		"F">
+<!ENTITY cricket.menuitem.messages.label		"Messages">
+<!ENTITY cricket.menuitem.messages.tooltip		"Messages">
+<!ENTITY cricket.menuitem.messages.accesskey		"M">
+<!ENTITY cricket.menuitem.communities.label		"Communities">
+<!ENTITY cricket.menuitem.communities.tooltip		"Communities">
+<!ENTITY cricket.menuitem.communities.accesskey		"C">
+<!ENTITY cricket.menuitem.search.label			"Search">
+<!ENTITY cricket.menuitem.search.tooltip		"Search">
+<!ENTITY cricket.menuitem.search.accesskey		"S">
+<!ENTITY cricket.menuitem.logout.label			"Logout">
+<!ENTITY cricket.menuitem.logout.tooltip		"Logout">
+<!ENTITY cricket.menuitem.logout.accesskey		"L">
+
+<!ENTITY cricket.menuitem.hideMenu.label		"Hide Menu">
+<!ENTITY cricket.menuitem.hideMenu.tooltip		"Hide Menu">
+<!ENTITY cricket.menuitem.hideMenu.accesskey		"H">
+
+<!ENTITY cricket.menuitem.switchToMenu.label		"Switch to Menu">
+<!ENTITY cricket.menuitem.switchToMenu.tooltip		"Switch to Menu">
+<!ENTITY cricket.menuitem.switchToMenu.accesskey	"W">
+<!ENTITY cricket.menuitem.switchToButton.label		"Switch to Button">
+<!ENTITY cricket.menuitem.switchToButton.tooltip	"Switch to Button">
+<!ENTITY cricket.menuitem.switchToButton.accesskey	"W">
+
+<!ENTITY cricket.menu.teamSelect.label			"Select Team">
+<!ENTITY cricket.menu.teamSelect.tooltip		"Select Team">
+<!ENTITY cricket.menu.teamSelect.accesskey		"T">
+
+<!-- theme selection -->
+<!ENTITY cricket.button.selectTheme.tooltip		"Select Theme">
+
+<!-- sidebar -->
+<!ENTITY cricket.sidebar.cricket.title			"Cricket Companion by Balachandar.M">
+
+<!ENTITY cricket.sidebar.menuitem.cricket.label		"cricket.balachandar.net">
+<!ENTITY cricket.sidebarCmd.cricket.accesskey		"C">
+<!ENTITY cricket.openSidebar.cricket.commandkey		"C">
+<!ENTITY cricket.openSidebar.cricket.modifiersKey	"accel,shift">

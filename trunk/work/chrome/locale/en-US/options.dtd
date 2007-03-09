@@ -1,0 +1,7 @@
+<!ENTITY win.options.title			"Cricket Options">
+<!ENTITY win.preferences.title			"Cricket Preferences">
+<!ENTITY options.caption			"Options">
+<!ENTITY preferences.caption			"Preferences">
+<!ENTITY openSidebarOnBrowserStart.label	"Open sidebar on browser start">
+<!ENTITY showStatusbarLiveMatchesUpdate.label	"Show status bar updates for live matches">
+

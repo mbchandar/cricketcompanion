@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<!-- 
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+ -->
+
+<!DOCTYPE bindings [
+  <!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd">
+  %globalDTD;
+]>
+
+<bindings id="menuitemBindings"
+   xmlns="http://www.mozilla.org/xbl"
+   xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   xmlns:xbl="http://www.mozilla.org/xbl">
+
+  <binding id="menuitem-iconic" extends="chrome://global/content/bindings/menu.xml#menuitem">
+    <resources>
+      <stylesheet src="chrome://cricket/content/bindings/menu.css"/>
+    </resources> 
+    <content>
+      <xul:hbox class="menu-iconic-left" align="center" pack="center"
+                xbl:inherits="selected,_moz-menuactive,disabled,checked">
+        <xul:image class="menu-iconic-icon" xbl:inherits="src=image,validate,src"/>
+      </xul:hbox>
+      <xul:hbox class="cricket-menuitem-flag-box" align="center" pack="center"
+      		xbl:inherits="disabled">
+        <xul:image class="cricket-menuitem-flag" xbl:inherits="src=image2"/>
+      </xul:hbox>
+      <xul:label class="menu-iconic-text" flex="1" xbl:inherits="value=label,accesskey,crop" crop="right"/>
+      <xul:hbox anonid="accel">
+        <xul:label class="menu-iconic-accel" xbl:inherits="value=acceltext"/>
+      </xul:hbox>
+    </content>
+  </binding>
+
+</bindings>

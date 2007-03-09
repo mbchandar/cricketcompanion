@@ -1,0 +1,16 @@
+<!ENTITY cricket.worldcup.ctry.notheme.label               	"None">
+	
+<!ENTITY cricket.statusbar.noMatchToday.label              	"No Match Today">
+
+<!ENTITY cricket.statusbar.switchmatch.button.label        	"Switch To Other Match">
+<!ENTITY cricket.statusbar.showMatchNote.button.tooltip		"Show Match Event">
+<!ENTITY cricket.statusbar.hideMatchNote.button.tooltip		"Hide Match Event">
+
+<!ENTITY cricket.matchnote.details.button.label            	"Details">
+<!ENTITY cricket.matchnote.showDetails.button.tooltip      	"Show Details">
+<!ENTITY cricket.matchnote.hideDetails.button.tooltip      	"Hide Details">
+
+<!ENTITY cricket.sidebar.maintab.headlines.tooltip     		"HEADLINES">
+
+<!ENTITY cricket.options.openSidebarWhenStart.label    		"Always open sidebar when &brandShortName; start">
+<!ENTITY cricket.options.leaveAlertsOpenUntilUserClose.label  	"Always leave alerts open until I close them">

@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+
+<!-- 
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+ -->
+
+<?xml-stylesheet href="chrome://cricket/skin/os_mac.css" type="text/css"?>
+<?xml-stylesheet href="chrome://cricket/skin/os.css" type="text/css"?>
+<?xml-stylesheet href="chrome://cricket/content/xul.css" type="text/css"?>
+<?xml-stylesheet href="chrome://cricket/skin/cricket.css" type="text/css"?>
+
+<!DOCTYPE overlay [
+<!ENTITY % cricketDTD SYSTEM "chrome://cricket/locale/cricket.dtd"> %cricketDTD;
+<!ENTITY % countriesDTD SYSTEM "chrome://cricket/locale/countries.dtd"> %countriesDTD;
+<!ENTITY % netErrorDTD SYSTEM "chrome://global/locale/netError.dtd"> %netErrorDTD;
+<!ENTITY % cricketFontDTD SYSTEM "chrome://browser/locale/preferences/fonts.dtd"> %cricketFontDTD;
+]>
+
+<overlay id="cricketOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <script type="application/x-javascript" src="chrome://cricket/content/cricket.js" />
+  <script type="application/x-javascript" src="chrome://cricket/content/common.js" />
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="bundle_cricket_brand" src="chrome://cricket/content/brand/brand.properties" />
+    <stringbundle id="bundle_cricket" src="chrome://cricket/locale/cricket.properties" />
+    <stringbundle id="bundle_cricket_countries" src="chrome://cricket/locale/countries.properties" />
+    <stringbundle id="bundle_cricket_match" src="chrome://cricket/locale/match.properties" />
+    <stringbundle id="bundle_cricket_match_extra" src="chrome://cricket/locale/match-extra.properties" />
+  </stringbundleset>
+
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="viewCricketSidebar" autoCheck="false" 
+    		label="&cricket.sidebar.menuitem.cricket.label;"
+		type="checkbox" group="sidebar"
+		sidebarurl="chrome://cricket/content/sidebar.xul"
+		sidebartitle="&cricket.tbbutton.label;"
+		oncommand="toggleSidebar('viewCricketSidebar');event.stopPropagation();" />
+    <broadcaster id="cricket-cricketLogin" disabled="false" />    
+    <broadcaster id="cricket-cricketFeatures" disabled="true" />
+  </broadcasterset>
+
+  <keyset id="mainKeyset">
+    <key id="key_openCricketSidebar" command="viewCricketSidebar"
+	key="&cricket.openSidebar.cricket.commandkey;"
+	modifiers="&cricket.openSidebar.cricket.modifiersKey;"/>
+  </keyset>
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_openCricketSidebar" observes="viewCricketSidebar" accesskey="&cricket.sidebarCmd.cricket.accesskey;"/>
+  </menupopup>
+
+  <toolbox id="navigator-toolbox">
+      <toolbarpalette id="BrowserToolbarPalette">
+      
+	  <toolbarbutton id="cricket-tbbutton" 
+	  	 class="toolbarbutton-1 chromeclass-toolbar-additional"
+                 label="&cricket.tbbutton.label;"
+                 tooltiptext="&cricket.tbbutton.tooltip;"
+                 oncommand="toggleSidebar('viewCricketSidebar');"/>
+      
+      </toolbarpalette>
+  </toolbox>
+
+  
+  <toolbar id="toolbar-menubar">
+    <box align="center" pack="end" flex="1000" insertbefore="throbber-box">
+      <toolbarbutton type="menu" id="cricket-tbb-flag-button" context="menupopup_mainmenupopup" tooltiptext="&cricket.button.selectTheme.tooltip;" class="cricket-flag-button" hidden="true">  
+	       <menupopup onpopupshowing="cricketMain.onPopupShowingCountryPref(event);">
+	        <menuitem id="cricket-worldcup-ctry-aus" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-aus.png"
+			label="&cricket.worldcup.ctry.aus.label;"
+			tooltiptext="&cricket.worldcup.ctry.aus.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'aus');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-ban" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ban.png"
+			label="&cricket.worldcup.ctry.ban.label;"
+			tooltiptext="&cricket.worldcup.ctry.ban.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ban');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-ber" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ber.png"
+			label="&cricket.worldcup.ctry.ber.label;"
+			tooltiptext="&cricket.worldcup.ctry.ber.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ber');event.stopPropagation();"/>	        
+		<menuitem id="cricket-worldcup-ctry-can" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-can.png"
+			label="&cricket.worldcup.ctry.can.label;"
+			tooltiptext="&cricket.worldcup.ctry.can.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'can');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-eng" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-eng.png"
+			label="&cricket.worldcup.ctry.eng.label;"
+			tooltiptext="&cricket.worldcup.ctry.eng.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'eng');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-ind" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ind.png"
+			label="&cricket.worldcup.ctry.ind.label;"
+			tooltiptext="&cricket.worldcup.ctry.ind.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ind');event.stopPropagation();"/>        
+	        <menuitem id="cricket-worldcup-ctry-ire" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ire.png"
+			label="&cricket.worldcup.ctry.ire.label;"
+			tooltiptext="&cricket.worldcup.ctry.ire.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ire');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-ken" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ken.png"
+			label="&cricket.worldcup.ctry.ken.label;"
+			tooltiptext="&cricket.worldcup.ctry.ken.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ken');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-net" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-net.png"
+			label="&cricket.worldcup.ctry.net.label;"
+			tooltiptext="&cricket.worldcup.ctry.net.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'net');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-nz" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-nz.png"
+			label="&cricket.worldcup.ctry.nz.label;"
+			tooltiptext="&cricket.worldcup.ctry.nz.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'nz');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-pak" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-pak.png"	        
+			label="&cricket.worldcup.ctry.pak.label;"
+			tooltiptext="&cricket.worldcup.ctry.pak.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'pak');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-sco" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-sco.png"	        
+			label="&cricket.worldcup.ctry.sco.label;"
+			tooltiptext="&cricket.worldcup.ctry.sco.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'sco');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-sa" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-sa.png"	        
+			label="&cricket.worldcup.ctry.sa.label;"
+			tooltiptext="&cricket.worldcup.ctry.sa.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'sa');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-sl" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-sl.png"	        
+			label="&cricket.worldcup.ctry.sl.label;"
+			tooltiptext="&cricket.worldcup.ctry.sl.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'sl');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-wi" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-wi.png"	        
+			label="&cricket.worldcup.ctry.wi.label;"
+			tooltiptext="&cricket.worldcup.ctry.wi.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'wi');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-zim" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-zim.png"
+			label="&cricket.worldcup.ctry.zim.label;"
+			tooltiptext="&cricket.worldcup.ctry.zim.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'zim');event.stopPropagation();"/>	        
+	        <menuseparator/>
+	        <menuitem id="cricket-worldcup-ctry-default" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-default.png"	        
+			label="Cricket.com"
+			tooltiptext="Cricket.com"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'default');event.stopPropagation();"/>        
+	        <menuitem id="cricket-worldcup-ctry-notheme" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-notheme.png"	        
+			label="&minSize.none;"
+			tooltiptext="&minSize.none;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'notheme');event.stopPropagation();"/>        
+	       </menupopup>	      
+      </toolbarbutton>
+    </box>  
+  </toolbar>
+     
+  <statusbar id="status-bar">
+       <statusbarpanel id="cricket-match-statusbarpanel" insertbefore="security-button" hidden="true" align="center">
+         <hbox align="center" id="cricket-match-stbar-error">
+            <label value="&connectionFailure.title;" />
+         </hbox>            
+         <hbox align="center" id="cricket-match-stbar">
+            <label id="cricket-match-stbar-teamone-name"/>
+            <hbox align="center"><image id="cricket-match-stbar-flagone" class="cricket-match-flag"/></hbox>
+            <label id="cricket-match-stbar-teams"/>
+            <hbox align="center"><image id="cricket-match-stbar-flagtwo" class="cricket-match-flag"/></hbox>
+            <label id="cricket-match-stbar-teamtwo-name"/>
+            <label id="cricket-match-stbar-timeplayed"/>
+            <toolbarbutton id="cricket-match-stbar-switch" class="toolbarbutton-1" oncommand="if(!cricketWCServerService.displayLiveMatchErrorWhenInteract()){ cricketWCServerService.toggleLiveMatch(event); }" hidden="true"/>
+            <toolbarbutton id="cricket-match-stbar-note-button" class="toolbarbutton-1" oncommand="if(!cricketWCServerService.displayLiveMatchErrorWhenInteract()){ cricketMain.setMatchNotificationPosition();cricketWCServerService.toggleMatchNote(); }"/>
+         </hbox>   
+       </statusbarpanel>      
+       <statusbarpanel id="cricket-matchhl-statusbarpanel" insertbefore="security-button" hidden="true"  align="center">
+              <label id="cricket-match-stbar-teamone-name2" hidden="true"/>
+              <hbox align="center"><image id="cricket-match-stbar-flagone2" class="cricket-match-flag" hidden="true"/></hbox>
+              <label id="cricket-match-stbar-teams2" hidden="true"/>
+              <hbox align="center"><image id="cricket-match-stbar-flagtwo2" class="cricket-match-flag" hidden="true"/></hbox>
+              <label id="cricket-match-stbar-teamtwo-name2" hidden="true"/>
+              <label id="cricket-match-stbar-extra-info2" hidden="true"/>
+              <toolbarbutton id="cricket-match-stbar-switch2" class="toolbarbutton-1" oncommand="cricketWCServerService.toggleFutureMatch(event);" hidden="true"/>              
+              <toolbarbutton id="cricket-match-stbar-note-button2" class="toolbarbutton-1" oncommand="cricketMain.setMatchNotificationPosition();cricketWCServerService.toggleLastMatchNote();" />
+       </statusbarpanel>      
+       <statusbarpanel class="statusbarpanel-menu-iconic" insertbefore="security-button" id="cricket-sbb-flag-button" hidden="true" tooltiptext="&cricket.button.selectTheme.tooltip;">
+  	     <menupopup onpopupshowing="cricketMain.onPopupShowingCountryPref(event);">
+	        <menuitem id="cricket-worldcup-ctry-aus" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-aus.png"
+			label="&cricket.worldcup.ctry.aus.label;"
+			tooltiptext="&cricket.worldcup.ctry.aus.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'aus');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-ban" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ban.png"
+			label="&cricket.worldcup.ctry.ban.label;"
+			tooltiptext="&cricket.worldcup.ctry.ban.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ban');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-ber" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ber.png"
+			label="&cricket.worldcup.ctry.ber.label;"
+			tooltiptext="&cricket.worldcup.ctry.ber.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ber');event.stopPropagation();"/>	        
+		<menuitem id="cricket-worldcup-ctry-can" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-can.png"
+			label="&cricket.worldcup.ctry.can.label;"
+			tooltiptext="&cricket.worldcup.ctry.can.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'can');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-eng" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-eng.png"
+			label="&cricket.worldcup.ctry.eng.label;"
+			tooltiptext="&cricket.worldcup.ctry.eng.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'eng');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-ind" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ind.png"
+			label="&cricket.worldcup.ctry.ind.label;"
+			tooltiptext="&cricket.worldcup.ctry.ind.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ind');event.stopPropagation();"/>        
+	        <menuitem id="cricket-worldcup-ctry-ire" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ire.png"
+			label="&cricket.worldcup.ctry.ire.label;"
+			tooltiptext="&cricket.worldcup.ctry.ire.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ire');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-ken" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-ken.png"
+			label="&cricket.worldcup.ctry.ken.label;"
+			tooltiptext="&cricket.worldcup.ctry.ken.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'ken');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-net" type="cricket-checkbox-image" checked="false" autocheck="false"
+	        	image2="chrome://cricket/skin/flag-net.png"
+			label="&cricket.worldcup.ctry.net.label;"
+			tooltiptext="&cricket.worldcup.ctry.net.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'net');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-nz" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-nz.png"
+			label="&cricket.worldcup.ctry.nz.label;"
+			tooltiptext="&cricket.worldcup.ctry.nz.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'nz');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-pak" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-pak.png"	        
+			label="&cricket.worldcup.ctry.pak.label;"
+			tooltiptext="&cricket.worldcup.ctry.pak.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'pak');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-sco" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-sco.png"	        
+			label="&cricket.worldcup.ctry.sco.label;"
+			tooltiptext="&cricket.worldcup.ctry.sco.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'sco');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-sa" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-sa.png"	        
+			label="&cricket.worldcup.ctry.sa.label;"
+			tooltiptext="&cricket.worldcup.ctry.sa.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'sa');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-sl" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-sl.png"	        
+			label="&cricket.worldcup.ctry.sl.label;"
+			tooltiptext="&cricket.worldcup.ctry.sl.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'sl');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-wi" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-wi.png"	        
+			label="&cricket.worldcup.ctry.wi.label;"
+			tooltiptext="&cricket.worldcup.ctry.wi.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'wi');event.stopPropagation();"/>	        
+	        <menuitem id="cricket-worldcup-ctry-zim" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-zim.png"
+			label="&cricket.worldcup.ctry.zim.label;"
+			tooltiptext="&cricket.worldcup.ctry.zim.label;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'zim');event.stopPropagation();"/>	        
+	        <menuseparator/>
+	        <menuitem id="cricket-worldcup-ctry-default" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-default.png"	        
+			label="Cricket.com"
+			tooltiptext="Cricket.com"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'default');event.stopPropagation();"/>        
+	        <menuitem id="cricket-worldcup-ctry-notheme" type="cricket-checkbox-image" checked="false" autocheck="false"
+			image2="chrome://cricket/skin/flag-notheme.png"	        
+			label="&minSize.none;"
+			tooltiptext="&minSize.none;"
+	                oncommand="cricketMain.onSelectCountryPref(event, 'notheme');event.stopPropagation();"/>        
+	       </menupopup>	      
+       </statusbarpanel>	
+  
+  </statusbar>
+
+  <window id="main-window">
+    <vbox id="cricket-match-note"  class="cricket-match-note" hidden="true">
+     <vbox flex="1" class="cricket-match-note">
+       <hbox pack="end" align="center">
+         <toolbarbutton class="tabs-closebutton" oncommand="cricketWCServerService.showMatchNote(false); cricketWCServerService.showLastMatchNote(false);" />
+       </hbox>
+       <vbox id="cricket-match-note-event-box">
+         <hbox align="center" id="cricket-match-note-event-header-box" style="overflow: hidden">
+           <image id="cricket-match-note-icon" height="32" width="32"/>
+           <label id="cricket-match-note-event"/>
+         </hbox>  
+         <hbox align="center" style="overflow: hidden">
+           <description id="cricket-match-note-d1"/>
+         </hbox>  
+         <hbox align="center" flex="1" style="overflow: hidden">
+           <description id="cricket-match-note-d2"/>
+           <spacer flex="1"/>
+           <button id="cricket-match-note-expander" class="cricket-expander-up" oncommand="cricketWCServerService.expandMatchDetailsBox();"/>   
+         </hbox>
+         <grid id="cricket-match-note-details" flex="1" style="overflow: auto" hidden="true">
+          <columns>
+           <column />
+           <column />
+           <column />
+           <column />
+           <column flex="1"/>
+          </columns>
+          <rows id="cricket-match-note-details-rows" />
+         </grid>
+       </vbox>  
+     </vbox>          
+   </vbox>
+  </window>
+  
+  
+</overlay>

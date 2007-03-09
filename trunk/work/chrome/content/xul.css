@@ -1,0 +1,21 @@
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */
+ 
+toolbox { 
+  -moz-binding: url("chrome://cricket/content/bindings/toolbar.xml#toolbox") !important;
+  -moz-box-orient: vertical;
+}
+
+toolbar:not([id="gtbToolbar"]):not([id="print-preview-toolbar"]) {
+  -moz-binding: url("chrome://cricket/content/bindings/toolbar.xml#toolbar") !important;
+
+}
+
+menuitem[type="cricket-checkbox-image"] {
+  -moz-binding: url("chrome://cricket/content/bindings/menu.xml#menuitem-iconic") !important;
+}
+

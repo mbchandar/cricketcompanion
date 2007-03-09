@@ -1,0 +1,264 @@
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+
+.cricket-flag-button {
+
+  -moz-appearance: none !important;
+  -moz-user-focus: ignore;
+  margin: 0px !important;
+  border: none !important;
+  padding: 0px !important;
+  min-width: 0px;
+  background-color: transparent !important;
+}
+
+/*** match - note ***/
+.cricket-match-flag {
+
+  max-width: 18px;
+  max-height: 12px;
+ }
+
+#cricket-match-note {
+ 
+  right: 0px; 
+  bottom: 21px; 
+  position: fixed;
+  border: 1px solid grey;
+}
+
+.cricket-match-note {
+ 
+  height:140px; 
+  width:420px; 
+}
+
+#cricket-match-note-event-box {
+  
+  padding : 14px 12px 12px 12px;
+}
+
+#cricket-match-note-event-header-box {
+
+  padding-bottom : 4px ;
+}
+
+#cricket-match-note-event {
+  
+  font-size: 2.0em;
+  font-weight: bold;
+}
+
+#cricket-match-note-event[styleCode="s"] {
+  
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+
+#cricket-match-note-d1, #cricket-match-note-d2 {
+
+  font-size: 1.25em;
+}
+
+#cricket-match-note-d1[styleCode="b"], #cricket-match-note-d2[styleCode="b"] {
+  font-weight: bold;
+}
+
+#cricket-match-note-d1[styleCode="g"], #cricket-match-note-d2[styleCode="g"] {
+  color: grey;
+  font-size : 1.0em !important;
+}
+
+#cricket-match-note-d1[styleCode="gl"], #cricket-match-note-d2[styleCode="g"] {
+  color: grey;
+}
+
+
+#cricket-match-note-icon {
+
+}
+
+#cricket-match-note-details {
+
+  background-color: white; 
+  border: 1px solid #7F9DB9; 
+  overflow: auto; 
+  height: 95px; 
+  margin-top:5px;
+}  
+
+.cricket-expander-up {
+  min-width: 0px;
+  list-style-image: url("chrome://cricket/skin/arrow-up.gif");
+}               
+.cricket-expander-up:hover {
+  list-style-image: url("chrome://cricket/skin/arrow-up-hov.gif");
+}
+.cricket-expander-up[disabled="true"] {
+  list-style-image: url("chrome://cricket/skin/arrow-up-dis.gif");
+}
+
+.cricket-expander-down {
+  min-width: 0px;
+  list-style-image: url("chrome://cricket/skin/arrow-dn.gif");
+}
+.cricket-expander-down:hover {
+  list-style-image: url("chrome://cricket/skin/arrow-dn-hov.gif");
+}
+.cricket-expander-down[disabled="true"] {
+  list-style-image: url("chrome://cricket/skin/arrow-dn-dis.gif");
+}
+
+#cricket-matchhl-statusbarpanel, #cricket-match-statusbarpanel {
+
+  min-height: 22px !important;
+}
+
+#cricket-match-stbar-switch, #cricket-match-stbar-switch2, #cricket-match-stbar-note-button, #cricket-match-stbar-note-button2 {
+
+  -moz-appearance: none !important;
+  -moz-user-focus: ignore;
+  margin: 0px !important;
+  border: none !important;
+  padding: 0px !important;
+  min-width: 20px !important;
+  background-color: transparent !important;
+}
+
+#cricket-match-stbar-switch, #cricket-match-stbar-switch2 {
+  list-style-image: url("chrome://cricket/skin/statusbar-toggle.gif");
+}
+
+#cricket-match-stbar-note-button, #cricket-match-stbar-note-button[dir="up"], #cricket-match-stbar-note-button2, #cricket-match-stbar-note-button2[dir="up"] {
+  list-style-image: url("chrome://cricket/skin/statusbar-up-arrow.gif");
+}
+
+#cricket-match-stbar-note-button[dir="down"], #cricket-match-stbar-note-button2[dir="down"] {
+  list-style-image: url("chrome://cricket/skin/statusbar-down-arrow.gif");
+}
+
+.cricket-match-red-card, .cricket-match-yellow-card, .cricket-match-goal, .cricket-match-goal-on-penalty, .cricket-match-own-goal {
+
+  min-height: 16px;
+  min-width: 16px;
+  max-height: 16px;
+  max-width: 16px;
+
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.cricket-match-red-card {
+
+  list-style-image: url("chrome://cricket/skin/red-card.png");
+}
+
+.cricket-match-yellow-card {
+
+  list-style-image: url("chrome://cricket/skin/yellow-card.png");
+}
+
+.cricket-match-goal {
+
+  list-style-image: url("chrome://cricket/skin/goal.png");
+}
+
+.cricket-match-goal-on-penalty {
+
+  list-style-image: url("chrome://cricket/skin/goal-on-penalty.png");
+}
+
+/** match alert details box ***/
+.cricket-match-details-odd-row, .cricket-match-details-even-row {
+  
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.cricket-match-details-odd-row {
+
+  background-color: #C5C5C7;
+}
+
+.cricket-match-details-even-row {
+
+  background-color: #E0DFE4;
+}
+
+/**
+#cricket-match-note-details-rows {
+
+  background-color: #C5C5C7;
+}
+**/
+
+/*** 32 x32 icons for alert popup ***/
+.cricket-match-own-goal {
+
+  list-style-image: url("chrome://cricket/skin/own-goal.png");
+}
+
+.cricket-match-red-card-32 {
+
+  list-style-image: url("chrome://cricket/skin/red-card-32.png");
+}
+
+.cricket-match-yellow-card-32 {
+
+  list-style-image: url("chrome://cricket/skin/yellow-card-32.png");
+}
+
+.cricket-match-goal-32 {
+
+  list-style-image: url("chrome://cricket/skin/goal-32.png");
+}
+
+.cricket-match-goal-on-penalty-32 {
+
+  list-style-image: url("chrome://cricket/skin/goal-on-penalty-32.png");
+}
+
+.cricket-match-own-goal-32 {
+
+  list-style-image: url("chrome://cricket/skin/own-goal-32.png");
+}
+
+.cricket-match-whistle-32 {
+
+  list-style-image: url("chrome://cricket/skin/whistle-32.png");
+}
+
+.cricket-match-first-half-start-32 {
+
+  list-style-image: url("chrome://cricket/skin/whistle_first_half_start.png");
+}
+
+.cricket-match-first-half-end-32 {
+
+  list-style-image: url("chrome://cricket/skin/whistle_first_half_end.png");
+}
+
+.cricket-match-second-half-start-32 {
+
+  list-style-image: url("chrome://cricket/skin/whistle_second_half_start.png");
+}
+
+.cricket-match-second-half-end-32 {
+
+  list-style-image: url("chrome://cricket/skin/whistle_second_half_end.png");
+}
+
+.cricket-match-in-progress-32 {
+
+  list-style-image: url("chrome://cricket/skin/in-progress-32.png");
+}
+
+tabs.tabbrowser-tabs {
+  background-color: transparent !important;
+  background-image: none !important;
+}

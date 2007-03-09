@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<!-- 
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+ -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://cricket/skin/match-info.css" type="text/css"?>
+
+<!DOCTYPE window [
+ <!ENTITY % matchInfoDTD SYSTEM "chrome://cricket/locale/match-info.dtd"> %matchInfoDTD;
+]>
+
+<window id="cricket-match-info-window"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"	
+	width="425"
+	height="365"
+	title="&window.title;"
+	title2="&window.title;"
+	onload="startUp();"
+	onunload="closeDown();">
+
+  <stringbundleset id="stringbundleset"> 
+      <stringbundle id="bundle_cricket_countries" src="chrome://cricket/locale/countries.properties" />      
+      <stringbundle id="bundle_cricket_match" src="chrome://cricket/locale/match.properties" />      
+  </stringbundleset>
+
+  <script type="application/x-javascript" src="chrome://cricket/content/match-info.js" />
+  <script type="application/x-javascript" src="chrome://cricket/content/common.js" />
+
+  <vbox id="top-container" align="center" pack="center">
+     <hbox align="center"><label id="match-type"/></hbox>
+     <hbox pack="center" align="center"><label id="match-info-at" value="@" hidden="true" /><label id="match-info"/></hbox>
+     <vbox pack="center" flex="1">
+        <hbox align="center" pack="center">
+          <box pack="end" align="center" class="right-column">
+            <description id="teamone-name" />
+          </box>
+          <box pack="center" align="center" class="middle-column">
+            <description id="versus" value="&versus.label;"/>
+          </box>
+          <box pack="start" align="center" class="left-column">
+            <description id="teamtwo-name" />
+	  </box>
+        </hbox>
+     </vbox>
+  </vbox>
+  <vbox id="score-container">
+     <hbox align="center" pack="center">
+        <box pack="end" class="left-column">
+           <image id="teamone-flag"/>
+        </box>
+        <box align="center" pack="center" class="middle-column">
+          <label id="match-total-scores"/>
+        </box>
+        <box pack="start" class="right-column">
+          <image id="teamtwo-flag"/>
+	</box>
+     </hbox>
+  </vbox>    
+  <grid id="info-grid" flex="1" style="overflow: auto">
+     <columns>
+        <column flex="1"/>
+        <column />
+        <column flex="1"/>
+     </columns>
+     <rows id="info-rows" />
+  </grid>
+  <vbox style="border-top: 1px solid #FFFFFF;">
+    <grid align="center" id="info-grid" flex="1" style="overflow: auto">
+       <columns>
+          <column flex="4"/>
+          <column flex="1"/>
+          <column flex="1"/>
+          <column flex="1"/>
+       </columns>
+       <rows id="info-rows">
+         <row>
+	    <box />
+	    <box />
+	    <box align="center"><image class="red-card"/><label id="key-red-card"/></box>
+	    <box align="center"><image class="goal-on-penalty"/><label id="key-goal-on-penalty" /></box>
+         </row>
+         <row>
+	    <box align="center"><label value="&key.label;"/></box>
+	    <box align="center"><image class="goal"/><label id="key-goal" /></box>
+	    <box align="center"><image class="yellow-card"/><label id="key-yellow-card" /></box>
+	    <box align="center"><image class="own-goal"/><label id="key-own-goal" /></box>
+         </row>
+       </rows>
+     </grid>
+  </vbox>     
+</window>

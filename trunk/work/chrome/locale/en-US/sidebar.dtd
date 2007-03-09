@@ -1,0 +1,24 @@
+<!ENTITY page.title				"Cricket Companion by Balachandar.M">
+<!ENTITY tab.main.label				"Main">
+<!ENTITY tab.videos.label			"Videos">
+<!ENTITY tab.communities.label			"Communities">
+<!ENTITY tab.fotos.label			"Fotos">
+<!ENTITY tab.teams.label			"Teams">
+<!ENTITY tab.schedules.label			"schedules">
+
+<!ENTITY tab.worldcup.options.label		"Options">
+
+<!-- main tab -->
+<!ENTITY main.tab.scoreboard.label		"SCOREBOARD">
+<!ENTITY main.tab.standing.label		"Standings">
+<!ENTITY main.tab.cricket.label			"Cricket23">
+<!ENTITY main.tab.theme.label			"Theme">
+<!ENTITY main.tab.preferences.button.label	"Preferences">
+<!ENTITY main.tab.options.button.label		"Options">
+<!ENTITY main.tab.googlenews.label		"HEADLINES">
+
+<!-- cricket website login/logout/sign up -->
+<!ENTITY tab.cricket.label			"Cricket Home">
+<!ENTITY tab.cricketlogin.label			"Login to Cricket">
+<!ENTITY tab.cricketlogout.label		"Logout">
+<!ENTITY tab.cricketsearch.label		"Search">
