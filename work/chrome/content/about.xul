@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<!-- 
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+ -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+    <!ENTITY % aboutDTD SYSTEM "chrome://cricket/locale/about.dtd"> %aboutDTD;
+    <!ENTITY % aboutExtraDTD SYSTEM "chrome://cricket/locale/about-extra.dtd"> %aboutExtraDTD;
+    <!ENTITY % brandDTD SYSTEM "chrome://cricket/content/brand/brand.dtd"> %brandDTD;
+]>
+
+<window class="dialog"
+	title="&win.title;"
+	onload="sizeToContent()"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="application/x-javascript" src="chrome://cricket/content/about.js" />
+
+<groupbox align="center" orient="horizontal">
+<vbox>
+  <description value="&extra.extName.label;" style="font-weight: bold; font-size: large;"/>
+  <description value="&extra.extVersion.label;"/>
+  <spacer style="height:15px"/>
+  <description value="&extra.copyright;"/>
+  <spacer style="height:15px"/>
+  <description value="&homepage.label;" style="font-weight: bold;"/>
+  <hbox>
+    <label value="http://www.mozilla.com/add-ons/cricketcompanion/"
+  		class="text-link"
+        	href="http://www.mozilla.com/add-ons/cricketcompanion/" onclick="openURL(event.target.getAttribute('href'));"/>
+   <spacer flex="1"/>     	
+  </hbox>
+</vbox>
+<image src="chrome://cricket/skin/about-cricket.png" style="padding: 0px 5px 0px 5px"/>
+</groupbox>
+
+<box align="right" pack="center" flex="1">
+	<button label="&close.label;" oncommand="window.close();"/>
+</box>
+</window>
+

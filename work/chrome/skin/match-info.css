@@ -1,0 +1,144 @@
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+
+#top-container {
+  
+  padding:5px 0px 5px 0px;
+  width : 380px;
+  height : 80px;
+  background : url('chrome://cricket/skin/matchinfo-header.png') top right no-repeat #646E70;
+}
+
+#score-container {
+
+  padding: 3px; 
+  border-top: 1px solid #FFFFFF; 
+  border-bottom: 1px solid #FFFFFF;
+  background : #A8AEAE;
+}
+
+#match-type {
+  font-size: 1.2em;
+  font-weight: bold;  
+}
+
+#match-info-at {
+
+  font-size: 0.9em;
+  padding : 0px 2px 0px 0px;
+  margin: 0px;
+  border: none;
+}
+
+#match-info {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding : 0px;
+  margin: 0px;
+  border: none;
+}
+
+#match-info[weight="border"] {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+#teamone-name, #teamtwo-name {
+
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+#versus {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#match-total-scores {
+  font-size: 1.0em;
+  font-weight: bold;
+}
+
+#match-type, #match-info-at, #match-info, #versus, #match-total-scores, #teamone-name, #teamtwo-name {
+
+  color: #FFFFFF; 
+}
+
+.right-column, .left-column {
+  
+  width: 145px;
+}
+
+.middle-column {
+
+  margin-left : 10px;
+  margin-right : 10px;
+  min-width: 55px; 
+  width: 55px;
+}
+
+.timeinfo-column {
+
+  border-right: 1px solid #FFFFFF !important; 
+  border-left: 1px solid #FFFFFF !important;
+}
+
+.odd-row {
+
+  background-color: #C5C5C7;
+}
+
+.even-row {
+
+  background-color: #E0DFE4;
+}
+
+.empty-row {
+
+  min-height: 17px; max-height: 17px
+}
+
+.red-card, .yellow-card, .goal, .goal-on-penalty, .own-goal {
+
+  min-height: 16px;
+  min-width: 16px;
+  max-height: 16px;
+  max-width: 16px;
+
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.red-card {
+
+  list-style-image: url("chrome://cricket/skin/red-card.png");
+}
+
+.yellow-card {
+
+  list-style-image: url("chrome://cricket/skin/yellow-card.png");
+}
+
+.goal {
+
+  list-style-image: url("chrome://cricket/skin/goal.png");
+}
+
+.goal-on-penalty {
+
+  list-style-image: url("chrome://cricket/skin/goal-on-penalty.png");
+}
+
+.own-goal {
+
+  list-style-image: url("chrome://cricket/skin/own-goal.png");
+}
+
+
+

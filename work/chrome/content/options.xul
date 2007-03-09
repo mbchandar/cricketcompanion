@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!-- 
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+ -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window [
+ <!ENTITY % aboutDTD SYSTEM "chrome://cricket/locale/options.dtd"> %aboutDTD;
+]>
+
+<dialog  id="cricketOptions" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"	
+	title="&win.options.title;"
+	title2="&win.preferences.title;"
+	onload="startUp();"
+	buttons="accept,cancel"
+	ondialogaccept="onAccept();">
+
+  <script type="application/x-javascript" src="chrome://cricket/content/options.js" />
+  <script type="application/x-javascript" src="chrome://cricket/content/common.js" />
+
+  <groupbox>
+    <caption id="cricketOptionsCaption" label="&options.caption;" label2="&preferences.caption;"/>
+    <checkbox id="showSidebarCheckbox" label="&openSidebarOnBrowserStart.label;"/>
+    <checkbox id="showStatusbarMatchesUpdateCheckbox" label="&showStatusbarLiveMatchesUpdate.label;"/>
+  </groupbox>
+  
+</dialog>
+

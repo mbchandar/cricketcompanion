@@ -1,0 +1,9 @@
+<!ENTITY win.title		"About Cricket extension">
+<!ENTITY extName.label		"&cricket.extension.name;">
+<!ENTITY extVersion.label	"Version &cricket.extension.version; - Copyright (c) 2007">
+<!ENTITY clientURL.label	"http://cricket.balachandar.net/">
+<!ENTITY developedBy.label	"Inspired by Joga Developed By">
+<!ENTITY author.label		"Balachandar">
+<!ENTITY homepage.label		"Home Page">
+<!ENTITY homepageURL.label	"http://cricket.balachandar.net/">
+<!ENTITY close.label		"Close">

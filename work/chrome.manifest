@@ -1,0 +1,7 @@
+overlay	chrome://browser/content/browser.xul	chrome://cricket/content/cricket.xul
+
+content	cricket	jar:chrome/cricket.jar!/content/
+skin	cricket	classic/1.0	jar:chrome/cricket.jar!/skin/
+locale	cricket	en-US	jar:chrome/cricket.jar!/locale/en-US/
+
+style	chrome://global/content/customizeToolbar.xul	chrome://cricket/skin/os.css

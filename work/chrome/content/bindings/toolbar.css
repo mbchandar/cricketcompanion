@@ -1,0 +1,60 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*
+ *  Joga.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */
+
+/* ::::: toolbox ::::: */
+toolbox{
+  -moz-appearance: none !important;
+  background-color : transparent !important;
+}
+
+toolbar {
+  -moz-appearance: none !important;
+  background-color : transparent !important;
+}
+
+/* linux */
+/* ::::: menubar & toolbar ::::: */
+toolbar[platform="nix"] {
+  min-width: 1px;
+  min-height: 20px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #9D9DA1;
+}
+
+toolbar[type="menubar"][platform="nix"]{
+  
+  border-bottom: 1px solid #9D9DA1; 
+  border-top: 0px !important;
+}
+
+/* mac */
+/* ::::: toolbar ::::: */
+toolbar[platform="mac"]{
+  min-width: 1px;
+  min-height: 20px !important;
+  color: #000000;
+  border-bottom: 1px solid #a3a3a3;
+}
+
+/* win */
+/* ::::: toolbar & menubar ::::: */
+
+toolbar[platform="win"] {
+  min-width: 1px;
+  min-height: 19px;
+  border-top: 1px solid ThreeDHighlight;
+  border-bottom: 1px solid ThreeDShadow;
+}
+
+toolbar[type="menubar"][platform="win"]{
+  min-width: 1px;
+  border-bottom: 1px solid ThreeDShadow;
+  border-top: 0px !important;
+}
+

@@ -1,0 +1,37 @@
+<!-- countries -->
+<!ENTITY cricket.worldcup.ctry.aus.label 			"Australia">
+<!ENTITY cricket.worldcup.ctry.ban.label 			"Bangladesh">
+<!ENTITY cricket.worldcup.ctry.ber.label 			"Bermuda">
+<!ENTITY cricket.worldcup.ctry.can.label 			"Canada">
+<!ENTITY cricket.worldcup.ctry.eng.label 			"England">
+<!ENTITY cricket.worldcup.ctry.ind.label 			"India">
+<!ENTITY cricket.worldcup.ctry.ire.label 			"Ireland"> 
+<!ENTITY cricket.worldcup.ctry.ken.label 			"Kenya">
+<!ENTITY cricket.worldcup.ctry.net.label 			"Netherlands">
+<!ENTITY cricket.worldcup.ctry.nz.label 			"New Zealand">
+<!ENTITY cricket.worldcup.ctry.pak.label 			"Pakistan">
+<!ENTITY cricket.worldcup.ctry.sco.label 			"Scotland">
+<!ENTITY cricket.worldcup.ctry.sa.label 			"South Africa">
+<!ENTITY cricket.worldcup.ctry.sl.label 			"Sri Lanka">
+<!ENTITY cricket.worldcup.ctry.wi.label 			"West Indies">
+<!ENTITY cricket.worldcup.ctry.zim.label 			"Zimbabwe">
+<!--
+for later use
+
+Australia
+Bangladesh
+Bermuda
+Canada 
+England
+India
+Ireland 
+Kenya
+Netherlands 
+New Zealand
+Pakistan
+Scotland 
+South Africa
+Sri Lanka
+West Indies
+Zimbabwe
+-->

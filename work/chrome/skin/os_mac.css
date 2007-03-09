@@ -1,0 +1,31 @@
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+
+/* toolbar button */
+#cricket-tbbutton { 
+  list-style-image: url("chrome://cricket/skin/tbb-football-mac.png"); 
+  -moz-image-region: rect(0px 32px 32px 0px);  
+}
+
+#cricket-tbbutton:hover {
+  -moz-image-region: rect(32px 32px 64px 0px);
+}
+
+#cricket-tbbutton[disabled="true"] { 
+  -moz-image-region: rect(64px 32px 96px 0px);
+}
+
+toolbar[iconsize="small"] #cricket-tbbutton {
+  list-style-image: url("chrome://cricket/skin/tbb-football-small-mac.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+toolbar[iconsize="small"] #cricket-tbbutton:hover {
+  -moz-image-region: rect(24px 24px 48px 0px);
+}
+toolbar[iconsize="small"] #cricket-tbbutton[disabled="true"] {
+  -moz-image-region: rect(48px 24px 72px 0px);
+}

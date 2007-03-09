@@ -1,0 +1,374 @@
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */ 
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Fix CSS problems on different OS */
+page {
+
+  overflow: -moz-hidden-unscrollable;
+  -moz-box-orient: vertical;
+
+  -moz-appearance: none;
+  background-color: #FFFFFF;
+  color: -moz-DialogText;
+  font: message-box;  
+}
+
+#pageCricketPanel {
+  
+}
+
+.cricketsb-tabpanels {
+
+  margin: 0px !important;
+  border: none !important;
+  padding: 0px !important;
+}
+
+.cricketsb-heading {
+
+  font-weight: bold;
+}
+
+.cricketsb-text[color="light"] {
+
+  color : #FFFFFF;
+}
+
+.cricketsb-textlink[color="light"] {
+
+  color : #FFFFFF;
+  cursor : pointer;
+  text-decoration : underline;
+}
+
+.cricketsb-textlink {
+
+  color : #000000;
+  cursor : pointer;
+  text-decoration : underline;
+}
+
+.cricketsb-textlink:hover {
+  
+  color : #FFFFFF;
+}
+
+.cricketsb-boldtext {
+
+  font-weight: bold;
+}
+
+
+#cricketsb-tabbox {
+  padding-top:65px;
+  background:url('chrome://cricket/skin/sidebar-tab-bg.png') no-repeat white !important;
+}
+
+.cricketsb-cricketlogin, .cricketsb-cricketlogout {
+
+  background: url('chrome://cricket/skin/dark-grey-slice.png') repeat-x #34393b;
+}
+
+/*** feed item ***/
+.cricketsb-feeditem-heading {
+
+  color : #000000;
+  text-decoration : underline;
+  cursor : pointer;  
+  padding : 5px 0px 5px 0px;
+}
+
+.cricketsb-feeditem-heading:hover {
+  
+  color: #FFFFFF;
+}
+
+
+.cricketsb-feeditem-content-box {
+  margin: 0px;
+  padding: 0px 0px 4px 0px;
+}
+
+
+/*** login, logout, signup ***/
+.links-container {
+
+  padding: 1px 5px 1px 10px;
+}
+
+.links-container2{
+
+  padding: 1px 5px 1px 10px;
+}
+
+.cricket-title-link {
+
+  padding-right: 4px
+}
+
+/*** theme selection ***/
+.cricketsb-them-selection-container {
+
+  padding-bottom: 8px;
+}
+
+#theme-label {
+
+  padding-right : 4px;
+}
+
+#cricketsb-ctry-flag-box{
+
+  padding-left: 0px;
+  padding-right: 4px;
+}
+
+#cricketsb-ctry-flag {
+
+  -moz-appearance: none !important;
+  -moz-user-focus: ignore;
+  margin-left: 0px;
+  border: none;
+  padding: 0px;
+  min-width: 24px;
+  min-height: 17px;
+  background-color: transparent !important;
+}
+
+
+/**** main tab ***/
+#main-tabpanel {
+
+  padding: 0px; 
+}
+
+.main-tab-headings-text {
+  color: #FFFFFF;
+  font-size: 0.95em !important;
+  font-weight: bold;
+}
+
+.main-tab-headings2 {
+  
+  padding: 6px 10px 6px 10px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  background: url('chrome://cricket/skin/light-grey-slice.png') repeat-x #8E9395;
+}
+
+.main-tab-headings {
+  
+  padding: 6px 10px 6px 10px;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  background: url('chrome://cricket/skin/light-grey-slice.png') repeat-x #8E9395;
+}
+
+
+.scoreboard-grid-column {
+
+  padding-right:9px;
+}
+
+.scoreboard-grid-column-teamoneflag {
+
+  padding-left:1px;
+  padding-right:1px;  
+}
+
+.scoreboard-grid-column-teamonescore {
+
+}
+
+.scoreboard-grid-column-teamtwoscore {
+
+}
+
+.scoreboard-grid-column-teamtwoflag {
+
+  padding-left:1px;
+  padding-right:9px;
+}
+
+.scoreboard-grid-column-seperator {
+  
+}
+
+.scoreboard-grid-row {
+  padding: 2px 0px 2px 0px;
+  margin-top:1px;
+  margin-bottom:1px;
+  font-size: 0.95em !important;
+}
+
+.scoreboard-grid-row:hover {
+  
+  background : url('chrome://cricket/skin/live-slice-over.gif') repeat-x;
+}
+
+.scoreboard-score-label {
+
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+#cricketsb-scoreboard-error, #cricketsb-scoreboard, #cricketsb-news, #cricketsb-news-error {
+
+  padding: 10px 8px 10px 10px;
+  min-height: 95px;
+  background: url('chrome://cricket/skin/big-background-slice.png') repeat-x #FFFFFF;
+}
+
+.standings-column {
+  
+  padding-right:12px;
+}
+
+.standings-grid-row {
+
+  margin-top:2px;
+  margin-bottom:2px;
+}
+
+.in-game {
+  margin-left : 30px;
+  max-height: 14px;
+  max-width : 14px;
+  list-style-image: url("chrome://cricket/skin/goal.png");
+
+}
+
+.ended-game {
+  max-height: 14px;
+  max-width : 14px;
+  list-style-image: url("chrome://cricket/skin/whistle.png");
+}
+
+/**** video tab / communities tab ****/
+.jreload-button {
+  -moz-appearance: none;
+  -moz-user-focus: ignore;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0px 2px 0px 0px !important;
+  min-width: 0;
+  background-color: transparent;
+  list-style-image: url("chrome://cricket/skin/reload.png");
+}
+
+.jreload-button:hover {
+  list-style-image: url("chrome://cricket/skin/reload_over.png");
+}
+
+
+.throbber-button {
+  -moz-appearance: none;
+  -moz-user-focus: ignore;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0px !important;
+  min-width: 0;
+  background-color: transparent;
+  list-style-image: url("chrome://cricket/skin/Throbber-small.png");
+}
+
+.throbber-button[busy="true"] {
+  list-style-image: url("chrome://cricket/skin/Throbber-small.gif");
+  opacity: 0.5;
+}
+
+/**** tab styling *****/
+crickettab {
+  -moz-binding: url("chrome://cricket/content/bindings/tabBindings.xml#tab") !important;
+  -moz-appearance: none !important;
+  -moz-box-pack: center;
+  color: #FFFFFF;
+  font-size: 0.95em !important;
+  
+  margin: 0px;
+  padding: 0px;
+  border: none !important;
+  height: 21px !important;
+}
+
+.crickettab-image-right, .crickettab-image-left {
+   width: 6px !important;
+   margin: 0px;
+   padding: 0px;
+}
+
+
+crickettab[selected="true"] > .crickettab-image-right {
+  background: url("chrome://cricket/skin/tab/activetab-right.png") no-repeat !important;
+  color: #FFFFFF !important;
+  font-weight: bold;
+}
+
+crickettab[selected="true"] > .crickettab-image-middle {
+  background: url("chrome://cricket/skin/tab/activetab-middle.png") repeat-x !important;
+  color: #FFFFFF !important;
+  font-weight: bold;
+}
+
+crickettab[selected="true"] > .crickettab-image-left {
+  background: url("chrome://cricket/skin/tab/activetab-left.png") no-repeat !important;
+  color: #FFFFFF !important;
+  font-weight: bold;
+}
+
+crickettab:hover:not([selected="true"]) > .crickettab-image-right {
+  background: url("chrome://cricket/skin/tab/hovertab-right.png") no-repeat !important;
+}
+
+crickettab:hover:not([selected="true"]) > .crickettab-image-middle {
+  background: url("chrome://cricket/skin/tab/hovertab-middle.png") repeat-x !important;
+}
+
+crickettab:hover:not([selected="true"]) > .crickettab-image-left {
+  background: url("chrome://cricket/skin/tab/hovertab-left.png") no-repeat !important;
+}
+
+crickettab:not([selected="true"]) > .crickettab-image-right {
+  background: url("chrome://cricket/skin/tab/inactivetab-right.png") no-repeat !important;
+}
+
+crickettab:not([selected="true"]) > .crickettab-image-middle {
+  background: url("chrome://cricket/skin/tab/inactivetab-middle.png") repeat-x !important;
+}
+
+crickettab:not([selected="true"]) > .crickettab-image-left {
+  background: url("chrome://cricket/skin/tab/inactivetab-left.png") no-repeat !important;
+}
+
+crickettabs {
+  -moz-binding: url("chrome://cricket/content/bindings/tabBindings.xml#tabs") !important; 
+}
+
+.tabs-left, .tab-right{
+
+  border-bottom: 1px solid white !important;
+
+}
+
+.tab-border-top-left {
+
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/**** tabpanel ****/
+tabpanels {
+  -moz-appearance: none !important; 
+  border: none !important;
+  padding: 0px !important;
+  margin-bottom: 10px;
+}
+
+
+

@@ -1,0 +1,19 @@
+/*
+ *  Cricket.com Companion - Powered by Firefox
+ *
+ *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *
+ */
+
+.cricket-menuitem-flag-box {
+  min-width: 18px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  -moz-margin-start: 2px;
+  -moz-margin-end: 4px;
+}
+
+.cricket-menuitem-flag {
+  width: 18px;
+  height: 12px
+}
