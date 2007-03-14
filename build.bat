@@ -1,4 +1,4 @@
-del work/build/cricketcompanion.xpi
+del build/cricketcompanion.xpi
 cd work/chrome
 del cricket.jar
 jar -cf cricket.jar content/ locale/ skin/

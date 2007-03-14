@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
-
 <!-- 
 /*
- *  Cricket.com Companion - Powered by Firefox
+ *  Cricket Companion - Powered by Firefox
  *
- *  Copyright (C) 2006  Mozilla Corporation.  All Rights Reserved.
+ *  Copyright (C) 2007  Balachandar M.  All Rights Reserved.
  *
  */ 
  -->
@@ -34,70 +33,65 @@
   <script type="application/x-javascript" src="chrome://cricket/content/common.js" />
   <script type="application/x-javascript" src="chrome://cricket/content/sidebar.js" />
   <script type="application/x-javascript" src="chrome://cricket/content/io.js" />
+  <script type="application/x-javascript" src="chrome://cricket/content/rss.js" />
 
   <tabbox id="cricketsb-tabbox" flex="1" onclick="onHeaderImageClick(event);">
-    <crickettabs>
-      <crickettab id="cricketsb-tab-videos" label="&tab.videos.label;"  oncommand="onSelectTab(event);"/>
-      <crickettab id="cricketsb-tab-communities" label="&tab.communities.label;" oncommand="onSelectTab(event);"/>
+    <crickettabs>      
+      <crickettab id="cricketsb-tab-livescores" label="Live Scores" oncommand="onSelectTab(event);"/>
+      <crickettab id="cricketsb-tab-news" label="Match Schedules" oncommand="onSelectTab(event);"/>
       <crickettab id="cricketsb-tab-fotos" label="&tab.fotos.label;" oncommand="onSelectTab(event);"/>
-      <crickettab id="cricketsb-tab-teams" label="&tab.teams.label;" oncommand="onSelectTab(event);"/>
-      <crickettab id="cricketsb-tab-schedules" label="&tab.schedules.label;" oncommand="onSelectTab(event);"/>
-      <!-- <crickettab id="cricketsb-tab-main" label="&tab.main.label;"  oncommand="onSelectTab(event);"/> -->
+      <crickettab id="cricketsb-tab-cd" label="Players by Teams" oncommand="onSelectTab(event);"/>
+      <crickettab id="cricketsb-tab-teams" label="Teams by Groups" oncommand="onSelectTab(event);"/>
     </crickettabs>
-    <tabpanels flex="1" class="cricketsb-tabpanels">
+    <tabpanels> 
+<!-- World Cup 2007 Live Scores Tab -->
       <tabpanel orient="vertical">
-	<hbox class="cricketsb-cricketlogin" hidden="true">
-	  <box class="links-container2" flex="1" align="center">
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricketlogin.label;" onclick="loadRefLink(event, 'cricketLogin');"/>
-	    <spacer flex="1"/>
-	    <button class="jreload-button" onclick="reloadIframe('cricketsb-tpanel-videos');"/>
-	    <image id="video-throbber" class="throbber-button"/>
-	  </box>
-	</hbox>  	
-	<hbox class="cricketsb-cricketlogout" hidden="true">
-	  <box class="links-container2" flex="1" align="center">
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricket.label;" onclick="loadRefLink(event, 'cricketHome');"/>
-	    <label class="cricketsb-text" color="light" value=" | "/>  
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricketsearch.label;" onclick="loadRefLink(event, 'cricketVideoSearch');"/>
-	    <spacer flex="1"/>
-	    <button class="jreload-button" onclick="reloadIframe('cricketsb-tpanel-videos');"/>
-	    <image id="video-throbber2" class="throbber-button"/>	    
-	  </box>
-	</hbox>  	          	
-        <browser id="cricketsb-tpanel-videos" disablehistory="true" flex="1"/>
+        <groupbox align="center" orient="horizontal" style="background: #FFFFFF">
+          <vbox style="height:15px;">
+            <description value="World Cup 2007 - Live Scores" style="font-weight: bold; font-size: large;"/>
+            <spacer style="height:2px"/>
+            <description value="source: cricinfo.com" style="font-weight: bold;"/>
+            <spacer style="height:15px"/>
+            <hbox align="center" >
+              <!-- snippet take from url http://content-usa.cricinfo.com/ci/content/current/image/photosplus.html -->
+              <html:iframe vspace="0" frameborder="0" marginheight="0" marginwidth="0" height="350" src="http://content-usa.cricinfo.com/wc2007/engine/current/match/scores/wc2007_livebox.html" hspace="0" scrolling="no" width="90%"></html:iframe>
+
+            </hbox>
+            <spacer style="height:15px"/>
+            <hbox>
+              <image src="http://img.cricinfo.com/cricinfo/section-headings/ci_logo_106x39.gif" alt="CricInfo Photos"/>
+            </hbox>
+          </vbox>
+          <image src="chrome://cricket/skin/about-cricket.png" style="padding: 0px 5px 0px 5px"/>
+        </groupbox>
       </tabpanel>
-      
-      
+<!-- World Cup 2007 live scores Tab ends -->
+
+<!-- World Cup 2007 News Tab -->
       <tabpanel orient="vertical">
-	<hbox class="cricketsb-cricketlogin" hidden="true">
-	  <box class="links-container2" flex="1" align="center">
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricketlogin.label;" onclick="loadRefLink(event, 'cricketLogin');"/>
-	    <spacer flex="1"/>
-	    <button class="jreload-button" onclick="reloadIframe('cricketsb-tpanel-communities');"/>
-	    <image id="communities-throbber" class="throbber-button"/>
-	  </box>
-	</hbox>  		
-	<hbox class="cricketsb-cricketlogout" hidden="true">
-	  <box class="links-container2" flex="1" align="center">
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricket.label;" onclick="loadRefLink(event, 'cricketHome');"/>
-	    <label class="cricketsb-text" color="light" value=" | "/>
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricketsearch.label;" onclick="loadRefLink(event, 'cricketSearch');"/>
-	    <spacer flex="1"/>
-	    <button class="jreload-button" onclick="reloadIframe('cricketsb-tpanel-communities');"/>
-	    <image id="communities-throbber2" class="throbber-button"/>	    
-	  </box>
-	</hbox>
-        <browser id="cricketsb-tpanel-communities" disablehistory="true" flex="1"/>
+        <groupbox align="center" orient="horizontal" style="background: #FFFFFF">
+          <vbox style="height:15px;">
+            <description value="World Cup 2007 - Match Schedules" style="font-weight: bold; font-size: large;"/>
+            <spacer style="height:2px"/>
+            <description value="source: cricinfo.com" style="font-weight: bold;"/>
+            <spacer style="height:15px"/>
+            <hbox align="center" >
+              <!-- snippet take from url http://content-usa.cricinfo.com/ci/content/current/image/photosplus.html -->
+              <html:iframe vspace="0" frameborder="0" marginheight="0" marginwidth="0" height="350" src="http://www.cricinfo.com/worldcup2007/FEATURES/fixtures-ajax.html" hspace="0" scrolling="no" width="90%"></html:iframe>
+
+            </hbox>
+            <spacer style="height:15px"/>
+            <hbox>
+              <image src="http://img.cricinfo.com/cricinfo/section-headings/ci_logo_106x39.gif" alt="CricInfo Photos"/>
+            </hbox>
+          </vbox>
+          <image src="chrome://cricket/skin/about-cricket.png" style="padding: 0px 5px 0px 5px"/>
+        </groupbox>
       </tabpanel>
+<!-- World Cup 2007 News Tab ends -->
 
 <!-- Fotos  -->
       <tabpanel orient="vertical">
-	<hbox class="cricketsb-cricketlogin" hidden="true">
-	  <box flex="1" align="center">
-	    <label color="light" value="World Cup Foto Galleries"/>
-	    <spacer flex="1"/>
-	  </box>
-	</hbox>  		
         <groupbox align="center" orient="horizontal" style="background: #FFFFFF">
           <vbox style="height:15px;">
             <description value="Foto Galleries" style="font-weight: bold; font-size: large;"/>
@@ -121,86 +115,51 @@
           <image src="chrome://cricket/skin/about-cricket.png" style="padding: 0px 5px 0px 5px"/>
         </groupbox>
       </tabpanel>
-
 <!-- Fotos tab ends -->
 
-
-<!-- Teams -->
+<!-- Scores  -->
       <tabpanel orient="vertical">
-	<hbox class="cricketsb-cricketlogin" hidden="true">
-	  <box class="links-container2" flex="1" align="center">
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricketlogin.label;" onclick="loadRefLink(event, 'cricketLogin');"/>
-	    <spacer flex="1"/>
-	    <button class="jreload-button" onclick="reloadIframe('cricketsb-tpanel-communities');"/>
-	    <image id="communities-throbber" class="throbber-button"/>
-	  </box>
-	</hbox>  		
-        <groupbox align="center" orient="horizontal">
-          <caption id="cricketTeamsCaption" label="&teams.caption;"/>
-          <vbox>
-            <description value="Teams" style="font-weight: bold; font-size: large;"/>
+        <groupbox align="center" orient="horizontal" style="background: #FFFFFF">
+          <vbox style="height:15px;">
+            <description value="Players by Teams" style="font-weight: bold; font-size: large;"/>
+            <spacer style="height:2px"/>
+            <description value="source: cricinfo.com" style="font-weight: bold;"/>
             <spacer style="height:15px"/>
-            <description value="my page" style="font-weight: bold;"/>
+            <hbox align="center">
+              <html:iframe vspace="0" frameborder="0" marginheight="0" marginwidth="0" height="350" src="http://www.cricinfo.com/worldcup2007/FEATURES/teams-ajax.html" hspace="0" scrolling="no" width="90%"></html:iframe>
+            </hbox>
+            <spacer style="height:15px"/>
             <hbox>
-              <label value="http://www.mozilla.com/add-ons/cricketcompanion/"
-  		     class="text-link"
-        	     href="http://www.mozilla.com/add-ons/cricketcompanion/" onclick="openURL(event.target.getAttribute('href'));"/>
-              <spacer flex="1"/>     	
+              <image src="http://img.cricinfo.com/cricinfo/section-headings/ci_logo_106x39.gif" alt="CricInfo Photos"/>
             </hbox>
           </vbox>
           <image src="chrome://cricket/skin/about-cricket.png" style="padding: 0px 5px 0px 5px"/>
         </groupbox>
       </tabpanel>
 
+<!-- scores tab ends -->
+
+<!-- Teams -->
+      <tabpanel orient="vertical">
+        <groupbox align="center" orient="horizontal" style="background: #FFFFFF">
+          <vbox style="height:15px;">
+            <description value="Teams by Groups" style="font-weight: bold; font-size: large;"/>
+            <spacer style="height:2px"/>
+            <description value="source: cricinfo.com" style="font-weight: bold;"/>
+            <spacer style="height:15px"/>
+            <hbox align="center">
+              <html:iframe vspace="0" frameborder="0" marginheight="0" marginwidth="0" height="350" src="http://www.cricinfo.com/worldcup2007/features/groups-ajax.html" hspace="0" scrolling="no" width="90%"></html:iframe>
+            </hbox>
+            <spacer style="height:15px"/>
+            <hbox>
+              <image src="http://img.cricinfo.com/cricinfo/section-headings/ci_logo_106x39.gif" alt="CricInfo Photos"/>
+            </hbox>
+          </vbox>
+          <image src="chrome://cricket/skin/about-cricket.png" style="padding: 0px 5px 0px 5px"/>
+        </groupbox>
+      </tabpanel>
 <!-- Teams tab ends -->
     
-      <!-- <tabpanel orient="vertical" id="main-tabpanel">
-	<hbox class="cricketsb-cricketlogin" hidden="true" align="center">
-	  <box class="links-container" flex="1" align="center">
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricketlogin.label;" onclick="loadRefLink(event, 'cricketLogin');"/>
-	    <spacer flex="1"/>
-	    <button class="jreload-button" onclick="scoreboard.reloadScoreboard();"/>
-	    <image id="scoreboard-throbber" class="throbber-button"/>	    	    
-	  </box>
-	</hbox>  	
-	<hbox class="cricketsb-cricketlogout" hidden="true">
-	  <box class="links-container" flex="1" align="center">
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricket.label;" onclick="loadRefLink(event, 'cricketHome');"/>
-	    <label class="cricketsb-text" color="light" value=" | "/>	  
-	    <label class="cricketsb-textlink" color="light" value="&tab.cricketsearch.label;" onclick="loadRefLink(event, 'cricketSearch');"/>
-	    <spacer flex="1"/>
-	    <button class="jreload-button" onclick="scoreboard.reloadScoreboard();"/>
-	    <image id="scoreboard-throbber2" class="throbber-button"/>	    	    
-          </box>
-	</hbox>
-	<vbox>
-	  <hbox class="main-tab-headings" align="center">
-	    <label value="&main.tab.scoreboard.label;" class="main-tab-headings-text" flex="1"/>
-	    <spacer flex="1"/>
-	  </hbox>
-	  <description id="cricketsb-scoreboard-error" hidden="true" flex="1">&connectionFailure.title;</description>
-          <grid align="center" id="cricketsb-scoreboard" flex="1" style="overflow:hidden;">
-            <columns>
-              <column class="scoreboard-grid-column-teamoneflag"/>
-              <column class="scoreboard-grid-column-teamonescore"/>
-              <column class="scoreboard-grid-column-seperator"/>
-              <column class="scoreboard-grid-column-teamtwoscore"/>
-              <column class="scoreboard-grid-column-teamtwoflag"/>
-              <column class="scoreboard-grid-column"/>
-            </columns>
-            <rows id="cricketsb-scoreboard-rows"  versus="&versus.label;">
-             </rows>
-          </grid>
-        </vbox>
-        <vbox flex="1">
-	  <hbox class="main-tab-headings2" align="center">
-	    <label value="&main.tab.googlenews.label;" class="main-tab-headings-text" flex="1"/>
-	  </hbox>
-	  <description id="cricketsb-news-error" hidden="true" flex="1">&connectionFailure.title;</description>	  
-          <vbox id="cricketsb-news" flex="1" style="overflow:hidden;"/>
-        </vbox>         
-      </tabpanel> -->
-
     </tabpanels>
   </tabbox>
   <script type="application/x-javascript">
@@ -212,25 +171,13 @@
       var tabbox = document.getElementById("cricketsb-tabbox");
       var lastSelectedTab = top.cricketMain.lastSelectedSidebarTab;
       switch(lastSelectedTab) {
-        /** disable the main tab
-        case "cricketsb-tab-main":      
-          tabbox.selectedIndex = 0;
-        break;
-        **/
-        case "cricketsb-tab-videos":
-          tabbox.selectedIndex = 0;
-          setTimeout(function(){
-          loadIframe("cricketsb-tpanel-videos", iframeSRC[0]);
-          setReloadInterval("videos");
-          }, 0);
-        break;    
-        case "cricketsb-tab-communities":
+        case "cricketsb-tab-news":
           tabbox.selectedIndex = 1;
           setTimeout(function(){
-           loadIframe("cricketsb-tpanel-communities", iframeSRC[1]);
-           setReloadInterval("communities");
+           loadIframe("cricketsb-tpanel-news", iframeSRC[2]);
+           setReloadInterval("news");
          }, 0);  
-        break;    
+        break;
       }
     }
     catch(e){ alert(e); }
